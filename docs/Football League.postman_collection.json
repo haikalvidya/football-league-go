@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "6702e14b-1759-40ca-98eb-c48a721098d4",
+		"name": "Football League",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post RecordGame",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "- clubhomename: Chelsea\n- clubawayname: Man Utd\n- score: \"1 : 2\"\n\n\n- clubhomename: Liverpool\n- clubawayname: Chelsea\n- score: \"1 : 1\"\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/football/recordgame",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"football",
+						"recordgame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get League Standings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/football/leaguestanding",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"football",
+						"leaguestanding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Club Standing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/football/rank?clubname=Chelsea",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"football",
+						"rank"
+					],
+					"query": [
+						{
+							"key": "clubname",
+							"value": "Chelsea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Is Contain Letter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_word\": \"cat\",\n    \"second_word\": \"ANTARTICA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/is-contain-letters",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"is-contain-letters"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

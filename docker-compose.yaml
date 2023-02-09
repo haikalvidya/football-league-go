@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  server:
+    build: .
+    container_name: football-league
+    ports:
+      - "8080:8080"
+    restart: always
+    command: /bin/sh -c "/app migrate up && /app"
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    container_name: mysql-football-league
+    command: mysqld --sql_mode="" --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: football-league 

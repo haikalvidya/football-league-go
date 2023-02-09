@@ -1,0 +1,23 @@
+server:
+  name: "football-league"
+  env: "dev"
+  address: ":8080"
+  base_url: "localhost"
+  internal_access_key: "inikeynya-aman-loh"
+database:
+  user: "root"
+  password: "password"
+  host: "db"
+  port: "3306"
+  name: "football-league"
+  params: "charset=utf8mb4&parseTime=True&loc=Local"
+  migration_table_name: "football-league_migrations"
+jwt:
+  secret: "football-league_jwt_secret_yang_aman_bgt_deh_pokoknya"
+  access_token_expire_hour: 720
+  refresh_token_expire_hour: 720
+redis:
+  host: "cache"
+  port: "6379"
+  password: ""
+  db: 0
